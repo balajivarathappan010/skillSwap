@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style4.css">
+    <title>MultipleMaterials</title>
+</head>
+<body>
+    <div class="title">
+        <h2>Skill Swap Connect</h2>
+    </div>
+    <div class="navbar">
+        <a href="/experienced">Home</a>
+        <a href="/">Logout</a>
+    </div>
+    <div class="form-container">
+        <h1>Multiple Materials</h1>
+        <form action="/post/MultipleMaterials" method="post">
+            <div class="form-group1">
+                <label for="skills" class="skill">Skill</label>
+                <input type="text" name="skill_details" id="skill">
+                <button type="button">Add</button>
+            </div>
+            {{#if formVisible}}
+            <div class="form-group">
+                <label for="youtubeLink">YouTube Channel Link:</label>
+                <input type="url" id="youtubeLink" name="youtubeLink" required>
+            </div>
+
+            <div class="form-group">
+                <label for="materials">Materials Needed:</label>
+                <input type="file" name="file" id="" required>
+            </div>
+
+            <div class="form-group">
+                <label for="timeToLearn">Time to Learn (Duration in hours):</label>
+                <input type="number" id="timeToLearn" name="timeToLearn" required>
+            </div>
+            {{/if}}
+        </form>
+    </div>
+</body>
+</html>
+

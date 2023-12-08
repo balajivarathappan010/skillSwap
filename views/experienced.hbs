@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style4.css">
+    <title>Experienced Person Page</title>
+</head>
+<body>
+    <div class="title">
+        <h2>Skill Swap Connect</h2>
+    </div>
+    <div class="navbar">
+        <a href="/">Logout</a>
+        <a href="/welcome">Home</a>
+    </div>
+    <div class="form-container">
+        <form action="/post/experienced" method="POST">
+            {{#if msg}}
+            <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+            <h2>Share Your Experience</h2>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experience (in years):</label>
+                <input type="number" id="experience" name="experience" required>
+            </div>
+
+            <div class="form-group">
+                <div class="form-skills">
+                    <label for="skills">How many skills do you Know?</label>
+                </div>
+                <input type="number" id="skills" name="skills" required>
+            </div>
+
+            <div class="form-group">
+                <label for="usefulness">Useful for Current Society:</label>
+                <select id="usefulness" name="usefulness" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="art-science">--select--</option>
+                    <option value="art-science">Arts and Science</option>
+                    <option value="engineering">Engineering</option>
+                </select>
+            </div>
+
+            <button type="submit">Next</button>
+        </form>
+    </div>
+    <script>
+            
+    </script>
+</body>
+</html>

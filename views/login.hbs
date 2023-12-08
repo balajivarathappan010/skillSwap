@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles2.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="title">
+        <h2>Skill Swap Connect</h2>
+    </div>
+    {{!-- <div class="navbar">
+        <a href="/Home">About Us</a>
+        <a href="/Home">Contact Us</a>
+    </div> --}}
+
+    <div class="form-container">
+        <form action="/post/login" method="POST">
+            {{#if msg}}
+            <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+            <h2>Login</h2>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="profession">Profession:</label>
+                <select id="profession" name="profession" required>
+                    <option value="" hidden>--select the profession--</option>
+                    <option value="fresher">Fresher</option>
+                    <option value="experienced">Experienced</option>
+                </select>
+            </div>
+            <div class="login">
+            <p>If you don't have account register here?<a href="/signup">register</a></p>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

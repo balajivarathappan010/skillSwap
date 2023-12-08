@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style4.css">
+    <title>datas</title>
+</head>
+<body>
+    <div class="title">
+        <h2>Skill Swap Connect</h2>
+    </div>
+    <div class="navbar">
+        <a href="/">Logout</a>
+        <a href="/welcome">Home</a>
+        <a href="/data">My Experience</a>
+    </div>
+    <div class="form-container">
+        <form action="/post/data" method="post">
+            <h1>Skill Swap</h1>
+            <table id="skillTable" border="1px solid">
+                <tr>
+                    {{!-- <th>name</th>
+                    <th>experience</th> --}}
+                    <th>skills</th>
+                    <th>materials</th>
+                    <th>Link</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    {{!-- display all datas from database --}}
+                    {{#each data}}
+                    <tr>
+                        {{!-- <td>{{name}}</td>
+                        <td>{{experience}}</td> --}}
+                        {{#if skill_details.length}}
+                            {{#each skill_details}}
+                            <tr>
+                                <td>{{skill}}</td>
+                                <td>{{timeToLearn}}</td>
+                                <td><a href="{{youtubeLink}}" target="_blank">references</a></td>
+                                <td><a href="/download/{{file}}">Download</a></td>
+                            </tr>
+                            {{/each}}
+                        {{else}}
+                        <td>No skill details available</td>
+                        <td></td>
+                        <td></td>
+                        {{/if}}
+                    </tr>
+                    {{/each}}
+                </tr>
+            </table>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    // Initially hide the table
+                    //$("#skillTable").hide();
+
+                    // When "My Experience" link is clicked, toggle the table's visibility
+                    $("a[href='/data']").click(function () {
+                        $("#skillTable").toggle();
+                    });
+                });
+            </script>
+        </form>
+    </div>
+</body>
+</html>
+

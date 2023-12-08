@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style4.css">
+    <title>datas</title>
+</head>
+<body>
+    <div class="title">
+        <h2>Skill Swap Connect</h2>
+    </div>
+    <div class="navbar">
+        <a href="/">Logout</a>
+        <a href="/engineering">Search</a>
+        <a href="/Home">Home</a>
+    </div>
+    <div class="form-container">
+        <form action="/post/engineering" method="post">
+            <h1>Skill Swap</h1>
+            <table id="skillTable" border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Experience</th>
+                    <th>Usefulness</th>
+                    <th>Skill Details</th>
+                </tr>
+                <!-- Display all datas from the database -->
+                {{#each data}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{experience}}</td>
+                    <td>{{usefulness}}</td>
+                    
+                    <td>
+                        {{#if skill_details.length}}
+                            <ul>
+                                {{#each skill_details}}
+                                    <li>
+                                        <strong>Link:</strong> <a href="{{youtubeLink}}" target="_blank">reference link</a>
+                                    </li>
+                                    <li>
+                                        <strong>Time to Learn(hours):</strong> {{timeToLearn}}
+                                    </li>
+                                    <li>
+                                        <strong>File:</strong> <a href="/download/{{file}}">Download</a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        {{else}}
+                            No skill details available
+                        {{/if}}
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    // Initially hide the table
+                    //$("#skillTable").hide();
+
+                    // When "My Experience" link is clicked, toggle the table's visibility
+                    $("a[href='/data']").click(function () {
+                        $("#skillTable").toggle();
+                    });
+                });
+            </script>
+        </form>
+    </div>
+</body>
+</html>
